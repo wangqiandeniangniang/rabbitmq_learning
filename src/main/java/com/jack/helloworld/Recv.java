@@ -18,6 +18,8 @@ public class Recv {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         factory.setVirtualHost(V_HOST);
+        factory.setHandshakeTimeout(1000000);
+        factory.setConnectionTimeout(1000000);
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
